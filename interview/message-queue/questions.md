@@ -89,6 +89,14 @@ topic数量对吞吐量的影响|||topic可以达到几百，几千个的级别�
 4. 如何保证数据不丢
 5. 如何保证数据的顺序性
 
+#### kafka复制的底层原理？
+
+#### kafka leader 的选举算法？
+
+#### kafka增加partition后的rebalance算法？
+
+#### 如何优化kafka的吞吐量？
+
 #### 总结
 
 1. 学习一些rabbitmq，kafka入门的一些知识
