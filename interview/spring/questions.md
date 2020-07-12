@@ -69,14 +69,17 @@ AOP即面向切面编程。使用AOP技术，可以将一些系统性相关的�
 ### 说一下 spring 的事务隔离？
 
 ### 说一下 spring mvc 运行流程？
-- 客户端（浏览器）发送请求，直接请求到 DispatcherServlet；
-- DispatcherServlet 根据请求信息调用 HandlerMapping，解析请求对应的 Handler；
-- 解析到对应的 Handler（也就是平常说的 Controller 控制器）后，开始由 HandlerAdapter 适配器处理；
-- HandlerAdapter 会根据 Handler 来调用真正的处理器开处理请求，并处理相应的业务逻辑；
-- 处理器处理完业务后，会返回一个 ModelAndView 对象，Model 是返回的数据对象，View 是个逻辑上的 View；
-- ViewResolver 会根据逻辑 View 查找实际的 View；
-- DispaterServlet 把返回的 Model 传给 View（视图渲染）；
-- 把 View 返回给请求者（浏览器）。
+- 第一步：发起请求到前端控制器(DispatcherServlet)
+- 第二步：前端控制器请求HandlerMapping查找 Handler （可以根据xml配置、注解进行查找）
+- 第三步：处理器映射器HandlerMapping向前端控制器返回Handler，HandlerMapping会把请求映射为HandlerExecutionChain对象（包含一个Handler处理器（页面控制器）对象，多个HandlerInterceptor拦截器对象），通过这种策略模式，很容易添加新的映射策略
+- 第四步：前端控制器调用处理器适配器去执行Handler
+- 第五步：处理器适配器HandlerAdapter将会根据适配的结果去执行Handler
+- 第六步：Handler执行完成给适配器返回ModelAndView
+- 第七步：处理器适配器向前端控制器返回ModelAndView （ModelAndView是springmvc框架的一个底层对象，包括 Model和view）
+- 第八步：前端控制器请求视图解析器去进行视图解析 （根据逻辑视图名解析成真正的视图(jsp)），通过这种策略很容易更换其他视图技术，只需要更改视图解析器即可
+- 第九步：视图解析器向前端控制器返回View
+- 第十步：前端控制器进行视图渲染 （视图渲染将模型数据(在ModelAndView对象中)填充到request域）
+- 第十一步：前端控制器向用户响应结果
 
 ### spring mvc 有哪些组件？
 - 前端控制器（DispatcherServlet）：主要负责捕获来自客户端的请求和调度各个组件。
