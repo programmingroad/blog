@@ -24,8 +24,20 @@ List,Map,Set,LinkedList,ArrayList,HashMap,HashSet
 ### 说一下 HashSet 的实现原理？
 
 ### ArrayList 和 LinkedList 的区别是什么？
+1、数据结构不同
+
+ArrayList是Array(动态数组)的数据结构，LinkedList是Link(链表)的数据结构。
+
+2、效率不同
+
+当随机访问List（get和set操作）时，ArrayList比LinkedList的效率更高，因为LinkedList是线性的数据存储方式，所以需要移动指针从前往后依次查找。
+
+当对数据进行增加和删除的操作(add和remove操作)时，LinkedList比ArrayList的效率更高，因为ArrayList是数组，所以在其中进行增删操作时，会对操作点之后所有数据的下标索引造成影响，需要进行数据的移动。
 
 ### 如何实现数组和 List 之间的转换？
+数组转 List ，使用 JDK 中 java.util.Arrays 工具类的 asList 方法
+
+List 转数组，使用 List 的toArray方法
 
 ### ArrayList 和 Vector 的区别是什么？
 
