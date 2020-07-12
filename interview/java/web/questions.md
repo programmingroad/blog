@@ -1,6 +1,6 @@
 ### session 和 cookie 有什么区别？
 - session 在服务器端（文件，数据库，缓存），cookie 在客户端（浏览器）
-- session通过session id来分别客户端，而客户端一般使用cookie来存储session id
+- session通过session id来分辨客户端，而客户端一般使用cookie来存储session id
 
 ### 说一下 session 的工作原理？
 
