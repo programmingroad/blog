@@ -79,3 +79,13 @@ JavaMail利用JAF来处理MIME编码的邮件附件。MIME的字节流可以被�
 若一个类仅仅实现了Serializable接口，则可以按照以下方式进行序列化和反序列化。
 - ObjectOutputStream采用默认的序列化方式，对该类对象的非transient的实例变量进行序列化。 
 - ObjectInputStream采用默认的反序列化方式，对该类对象的非transient的实例变量进行反序列化。
+
+### @controller和@Service和@Bean的区别？
+
+### Set是怎么保证数据不重复的
+
+### mysql深度分页如何优化
+
+### mybatis什么情况下不能使用#
+
+### spring bean的生命周期是怎么管理的
